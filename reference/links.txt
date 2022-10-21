@@ -1,0 +1,4 @@
+https://www.cnblogs.com/funwithwords/p/15709386.html
+https://zipcpu.com/blog/2017/07/31/vcd.html
+https://www.mathworks.com/help/hdlverifier/ref/tovcdfile.html
+https://pyvcd.readthedocs.io/en/latest/vcd.writer.html
