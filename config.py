@@ -1,4 +1,4 @@
-# 	"name"      [addr,startbit,width]
+# 	"name"      [addr,startbit,width, #unique char to be appended#]
 variables = { 
 	"head":		["01",0,6],
 	"EnRdB":	["01",9,1],
@@ -16,7 +16,7 @@ variables = {
 	"iwtr": 	["0B",8,3],
 	"iwtf": 	["0B",5,3],
 	"ostr":		["0B",12,3],
-	"patpolEN":	["0F",15,1],
+	"PDW_en":	["0F",15,1],
 	"patpoldet":["0F",4,1],
 	"pdw":		["10",0,5],
 	"wht_w":	["1B",8,8],
@@ -33,7 +33,7 @@ variables = {
 
 groups = {
 	"writer": 	["wtroff","iw","os","dur","iwtr","iwtf","ostr","pdw"],
-	"pdw": 		["patpolEN","patpoldet"],
+	"pdw": 		["PDW_en","patpoldet"],
 	"heater":	["htren","wht_w","wht_r"],
 	"reader": 	["EnRdB","EnRdA","rdivbias","RdGainB", "RdGainA", "RdBiasA", "RdBiasB"]
 }
