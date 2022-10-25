@@ -1,6 +1,8 @@
 # out.wlf opened as dataset "out"
-add wave -position insertpoint out:/top/*
-add wave -position insertpoint out:/top/writer/*
+add wave -positio# Break key hit
+# Break key hit
+ -position insertpoint out:/top/writer/*
 add wave -position insertpoint out:/top/pdw/*
 add wave -position insertpoint out:/top/heater/*
 add wave -position insertpoint out:/top/reader/*
+quit

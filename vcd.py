@@ -2,8 +2,8 @@ import re
 import sys
 from config import *
 
-
 version = 1.0
+outfilename = "out.vcd"
 
 # dict to keep previous values
 prev_value = dict()
@@ -82,13 +82,8 @@ def value_changed(name, value):
 	changed = True
 	if name in prev_value.keys():		# check if value exists
 		changed = (prev_value[name] != value)	# check if changed
-		
-	#if name == "PDW_en":
-	#	print(f"pdw en value = {value}\n")
-		
 	prev_value[name] = value			# store previous value
 	return changed						# return changed status
-	
 	'''
 	try:
 		prev_value[name]
@@ -102,6 +97,8 @@ def value_changed(name, value):
 		else:
 			return False
 	'''
+	
+	
 		
 '''
 	main proc
@@ -116,14 +113,14 @@ if __name__ == "__main__":
 		print(f"{sys.argv[0]} <filename.csv>\n")
 	else:
 		filename = sys.argv[1]
-		with open(filename, "r") as f, open("out.vcd", 'w') as outfile:
+		with open(filename, "r") as f, open(outfilename, 'w') as outfile:
 			f.readline()
 			do_header(outfile)
 			for line in f:
 				try:
 					(t, op, addr, data) = re.split(',', line.strip())
 				except ValueError:
-					print(f"Error near line {linecounter}, skipping")
+					print(f" * => error near line {linecounter}, skipping")
 				else:
 					if start_time == -1: start_time = t
 					
@@ -153,4 +150,5 @@ if __name__ == "__main__":
 									
 							t_prev = t_delta	# record t_delta
 				linecounter = linecounter + 1
+		print(f"done, {outfilename} written\n")
 
