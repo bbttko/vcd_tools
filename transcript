@@ -1,2 +1,2 @@
-add wave -r ERBP:/top/*
+add wave -r out:/top/*
 quit

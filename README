@@ -1,10 +1,16 @@
-how to use
-
+__usage__
 1. input file csv with header "timestamp,op,addr,data" from serial sniffer
-2. run "python vcd.py <inputfile.csv>"
-3. "out.vcd" generated
-4. option a) open out.vcd with GTKWave and do a recursive import of all signals
-   option b) open with ModelSim but first convert "out.vcd" to "out.wlf" via command "vcd2wlf out.vcd out.wlf"
+2. convert input csv to vcd.  Run "python vcd.py <inputfile.csv>".  out.csv generated
+
+__viewing__
+option a) GTKWave
+	open out.vcd with GTKWave and do a recursive import of all signals
+	
+option b) ModelSim
+	vcd -> wlf conversion, run command "vcd2wlf out.vcd out.wlf"
+	start ModelSim.  Run "vsim" from dosbox
+	open out.wlf from ModelSim
+	add wave
 
 
 
